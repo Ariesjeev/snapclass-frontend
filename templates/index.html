@@ -22,12 +22,43 @@
             <a href="#tech">Tech Stack</a>
         </div>
         <div class="nav-cta">
-            <a href="https://snapclass.streamlit.app/" class="btn-pill">Start AI Attendance <svg width="18" height="18" viewBox="0 0 24 24" fill="none"
+            <a href="https://snapclasses-ai.streamlit.app/" class="btn-pill">Start AI Attendance <svg width="18" height="18" viewBox="0 0 24 24" fill="none"
                     stroke="currentColor" stroke-width="2">
                     <path d="M9 5l7 7-7 7" />
                 </svg></a>
         </div>
+        <button class="hamburger-btn" id="hamburgerBtn" aria-label="Open menu" aria-expanded="false" aria-controls="mobileNav">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
     </nav>
+
+    <div class="mobile-nav" id="mobileNav">
+        <div class="mobile-nav-top">
+            <div class="logo">
+                <img src="{{ url_for('static', filename='img/app_logo.png') }}" alt="SnapClass Logo" style="height: 30px;">
+                <div class="logo-text">SnapClass</div>
+            </div>
+            <button class="mobile-nav-close" id="mobileNavClose" aria-label="Close menu">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M6 6l12 12M18 6L6 18" />
+                </svg>
+            </button>
+        </div>
+        <div class="mobile-nav-links">
+            <a href="#" class="mobile-nav-link" data-index="01">Home</a>
+            <a href="#features" class="mobile-nav-link" data-index="02">Features</a>
+            <a href="#journey" class="mobile-nav-link" data-index="03">Journey</a>
+            <a href="#tech" class="mobile-nav-link" data-index="04">Tech Stack</a>
+        </div>
+        <a href="https://snapclasses-ai.streamlit.app/" class="btn-cta mobile-nav-cta">Start AI Attendance
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <path d="M9 5l7 7-7 7" />
+            </svg>
+        </a>
+    </div>
+    <div class="mobile-nav-backdrop" id="mobileNavBackdrop"></div>
 
     <header class="hero">
         <div class="badge">
@@ -40,7 +71,7 @@
             speed, accuracy, and security.</p>
 
         <div class="hero-actions">
-            <a href="https://snapclass.streamlit.app/" class="btn-cta">Start AI Attendance <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+            <a href="https://snapclasses-ai.streamlit.app/" class="btn-cta">Start AI Attendance <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                     stroke="currentColor" stroke-width="3">
                     <path d="M9 5l7 7-7 7" />
                 </svg></a>
@@ -271,7 +302,7 @@
         <p>Join thousands of educators who have simplified their day with SnapClass. The smartest AI powered
             attendance
             system is just one click away.</p>
-        <a href="https://snapclass.streamlit.app/" class="btn-white">Start AI Attendance Now</a>
+        <a href="https://snapclasses-ai.streamlit.app/" class="btn-white">Start AI Attendance Now</a>
     </section>
 
     <footer class="main-footer">

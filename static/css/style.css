@@ -110,6 +110,7 @@ h4 {
     text-align: center;
     padding: 120px 40px;
     background-color: #f0f4ff;
+    position: relative;
 }
 
 .badge {
@@ -546,7 +547,7 @@ h4 {
     }
 
     .tech-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, 1fr);
     }
 
     .flow-step {
@@ -569,7 +570,6 @@ h4 {
     }
 
     .tech-grid {
-        grid-template-columns: repeat(2, 1fr);
         margin-top: 30px;
     }
 }
@@ -663,6 +663,10 @@ h4 {
         font-size: 2.4rem;
     }
 
+    .tech-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
     .tech-card {
         padding: 20px;
         flex-direction: column;
@@ -720,5 +724,166 @@ h4 {
 
     .hero p {
         font-size: 0.95rem;
+    }
+
+    .tech-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ==========================================================
+   Mobile Hamburger Nav
+   ========================================================== */
+
+/* Hamburger button — hidden on desktop */
+.hamburger-btn {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    width: 44px;
+    height: 44px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 1100;
+}
+
+.hamburger-btn span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background-color: #ffffff;
+    border-radius: 2px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.hamburger-btn.is-active span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
+
+.hamburger-btn.is-active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger-btn.is-active span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+}
+
+/* Full-screen mobile nav overlay */
+.mobile-nav {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: min(360px, 88vw);
+    height: 100vh;
+    background-color: #ffffff;
+    z-index: 1300;
+    padding: 24px 28px;
+    display: flex;
+    flex-direction: column;
+    transform: translateX(100%);
+    transition: transform 0.35s ease;
+    box-shadow: -10px 0 40px rgba(0, 0, 0, 0.15);
+}
+
+.mobile-nav.is-open {
+    transform: translateX(0);
+}
+
+.mobile-nav-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 48px;
+}
+
+.mobile-nav-top .logo-text {
+    color: var(--text-dark);
+}
+
+.mobile-nav-close {
+    background: none;
+    border: none;
+    color: var(--text-dark);
+    cursor: pointer;
+    padding: 6px;
+    display: flex;
+}
+
+.mobile-nav-links {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.mobile-nav-link {
+    position: relative;
+    text-decoration: none;
+    color: var(--text-dark);
+    font-family: 'Climate Crisis', sans-serif;
+    font-size: 1.6rem;
+    padding: 16px 0;
+    border-bottom: 1px solid var(--border);
+}
+
+.mobile-nav-link::before {
+    content: attr(data-index);
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    display: block;
+    margin-bottom: 4px;
+}
+
+.mobile-nav-link:active,
+.mobile-nav-link:hover {
+    color: var(--primary);
+}
+
+.mobile-nav-cta {
+    margin-top: auto;
+    width: 100%;
+    justify-content: center;
+    font-size: 1rem;
+    padding: 16px 24px;
+}
+
+/* Backdrop behind the overlay */
+.mobile-nav-backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.4);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease;
+    z-index: 1200;
+}
+
+.mobile-nav-backdrop.is-open {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Show the hamburger on mobile, hide the old inline nav-links / CTA pill */
+@media (max-width: 768px) {
+    .hamburger-btn {
+        display: flex;
+    }
+
+    .nav-cta {
+        display: none;
+    }
+
+    .hero {
+        min-height: auto;
+    }
+}
+
+@media (max-width: 400px) {
+    .mobile-nav {
+        width: 100vw;
     }
 }
