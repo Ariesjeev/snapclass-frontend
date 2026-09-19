@@ -111,6 +111,10 @@ h4 {
     padding: 120px 40px;
     background-color: #f0f4ff;
     position: relative;
+    background:
+        radial-gradient(circle at 15% 20%, rgba(88, 101, 242, 0.25), transparent 45%),
+        radial-gradient(circle at 85% 80%, rgba(235, 69, 158, 0.20), transparent 45%),
+        #e4e9ff;
 }
 
 .badge {
@@ -236,6 +240,10 @@ h4 {
     padding: 120px 80px;
     background-color: white;
     text-align: center;
+    background:
+        radial-gradient(circle at 15% 20%, rgba(72, 239, 136, 0.25), transparent 45%),
+        radial-gradient(circle at 85% 80%, rgba(103, 77, 219, 0.2), transparent 45%),
+        #e4e9ff;
 }
 
 .features h2 {
